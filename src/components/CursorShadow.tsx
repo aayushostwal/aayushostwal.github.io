@@ -30,13 +30,13 @@ const CursorShadowProvider = ({ children }: { children: React.ReactNode }) => {
         <div
           style={{
             position: "absolute",
-            top: cursorPosition.y - 200, // Offset for centering
-            left: cursorPosition.x - 250,
-            width: "500px",
-            height: "500px",
-            borderRadius: "50%",
+            top: cursorPosition.y - 20, // Offset for centering
+            left: cursorPosition.x - 25,
+            width: "100px",
+            height: "100px",
+            borderRadius: "70%",
             backgroundColor: constants.Colors.SHADOW,
-            boxShadow: `0 0 120px 150px ${constants.Colors.SHADOW}`,
+            boxShadow: `0 0 1000px 200px ${constants.Colors.SHADOW}`,
             pointerEvents: "none", // Prevent interaction
             zIndex: 0,
           }}

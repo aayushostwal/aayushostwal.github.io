@@ -1,5 +1,5 @@
 import { Box } from "@mantine/core";
-import BioSection from "./Bio";
+import BioSection from "./BioSection";
 
 import { useMediaQuery } from "@mantine/hooks";
 
