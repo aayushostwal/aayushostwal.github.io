@@ -1,7 +1,8 @@
 const Colors = {
   TEXT: "#94A3B8",
-  BACKGROUND: "rgb(17, 23, 41)",
-  SHADOW: "rgb(20, 30, 65, 0.5)",
+  BACKGROUND: "#111729",
+  SHADOW: "#141E4180",
+  BOX_SHADOW: "#253759",
 };
 export default {
   Colors,
