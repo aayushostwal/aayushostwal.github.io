@@ -10,6 +10,7 @@ export default function App() {
           style={{
             width: "100vw",
             height: "100vh",
+            fontSize: 14,
           }}
         >
           <AppLayout />

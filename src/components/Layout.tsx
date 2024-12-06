@@ -1,12 +1,16 @@
 import { Box } from "@mantine/core";
-import MyBio from "./Bio";
+import BioSection from "./Bio";
+
+import { useMediaQuery } from "@mantine/hooks";
 
 export default function AppLayout() {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
   return (
     <Box
       style={{
         display: "grid",
-        gridTemplateColumns: "1fr 1fr",
+        gridTemplateColumns: isMobile ? "1fr" : "1fr 1fr",
         width: "100vw",
         height: "100vh",
         margin: 0,
@@ -16,19 +20,22 @@ export default function AppLayout() {
     >
       <Box
         style={{
-          padding: "120px",
+          paddingLeft: 60,
+          paddingTop: 70,
           overflow: "auto",
+          width: "60%",
         }}
       >
-        <MyBio />
+        <BioSection />
       </Box>
       <Box
         style={{
-          padding: "20px",
+          paddingLeft: 60,
+          paddingTop: 70,
           overflow: "auto",
         }}
       >
-        <div>Right Section </div>
+        Right Section
       </Box>
     </Box>
   );

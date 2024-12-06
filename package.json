@@ -17,7 +17,8 @@
     "@mantine/styles": "^6.0.22",
     "chroma-js": "^3.1.2",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
