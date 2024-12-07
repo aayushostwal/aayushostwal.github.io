@@ -37,9 +37,9 @@ export default function AppLayout() {
           // width: "98vw",
           height: isMobile ? "auto" : "98vh", // Adjust height for mobile
           margin: 0,
-          paddingTop: 50,
-          paddingLeft: 60,
-          paddingRight: 50,
+          paddingTop: isMobile ? 10 : 50,
+          paddingLeft: isMobile ? 20 : 60,
+          paddingRight: isMobile ? 20 : 50,
           // overflow: "hidden",
           overflowY: isMobile ? "auto" : "hidden",
           scrollbarWidth: "none",
@@ -49,11 +49,7 @@ export default function AppLayout() {
         {isMobile ? (
           <></>
         ) : (
-          <Box
-          // style={{
-          //   overflow: "visible",
-          // }}
-          >
+          <Box>
             <BioSection />
           </Box>
         )}
@@ -76,6 +72,7 @@ export default function AppLayout() {
               style={{
                 overflow: "auto",
                 height: "auto",
+                paddingBottom: 60,
               }}
             >
               <BioSection />

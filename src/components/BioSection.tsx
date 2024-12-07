@@ -35,69 +35,46 @@ function BioSection() {
           minHeight: "200px",
         }}
       >
-        <Title
-          order={1}
-          size="h1"
-          style={{
-            fontWeight: 900,
-            color: "#E2E8F0",
-          }}
-        >
-          Aayush Ostwal
-        </Title>
-
-        <Text
-          style={{
-            marginTop: -15,
-            fontWeight: 500,
-            fontSize: 15,
-            color: "#E2E8F0",
-          }}
-        >
-          Senior Backend Engineer
-        </Text>
-
-        <Text>
-          I develop end-to-end, scalable, data-driven, intuitive and interactive
-          solutions. I develop end-to-end, scalable, data-driven, intuitive and
-          interactive solutions.
-        </Text>
-
-        <div style={{ marginTop: "auto" }}>
-          <Box
+        <Box>
+          <Title
+            order={1}
+            size="h1"
             style={{
-              display: "grid",
-              gridTemplateColumns: "1fr 1fr 1fr 1fr 1fr",
-              width: "60%",
-              overflow: "hidden",
+              fontWeight: 900,
+              color: "#E2E8F0",
             }}
           >
-            <Box style={{ overflow: "auto" }}>
-              <IconLink
-                Icon={FaGithub}
-                link="https://github.com/aayushostwal"
-              />
-            </Box>
-            <Box style={{ overflow: "auto" }}>
-              <IconLink
-                Icon={FaLinkedinIn}
-                link="https://www.linkedin.com/in/aayush-ostwal/"
-              />
-            </Box>
-            <Box style={{ overflow: "auto" }}>
-              <IconLink
-                Icon={FaMediumM}
-                link="https://medium.com/@aayushostwal"
-              />
-            </Box>
-            <Box style={{ overflow: "auto" }}>
-              <IconLink
-                Icon={IoMdMailUnread}
-                link="mailto:aayushostwal99@gamil.com"
-              />
-            </Box>
-          </Box>
-        </div>
+            Aayush Ostwal
+          </Title>
+
+          <Text
+            style={{
+              marginTop: -15,
+              fontWeight: 500,
+              fontSize: 15,
+              color: "#E2E8F0",
+            }}
+          >
+            Senior Backend Engineer
+          </Text>
+
+          <Text>
+            I develop end-to-end, scalable, data-driven, intuitive and
+            interactive solutions.
+          </Text>
+        </Box>
+        <Box style={{ display: "flex", gap: "10px" }}>
+          <IconLink Icon={FaGithub} link="https://github.com/aayushostwal" />
+          <IconLink
+            Icon={FaLinkedinIn}
+            link="https://www.linkedin.com/in/aayush-ostwal/"
+          />
+          <IconLink Icon={FaMediumM} link="https://medium.com/@aayushostwal" />
+          <IconLink
+            Icon={IoMdMailUnread}
+            link="mailto:aayushostwal99@gamil.com"
+          />
+        </Box>
       </Box>
     </>
   );
