@@ -7,6 +7,7 @@ import qure from "../data/projects/qure";
 import About from "./About";
 import Experience from "./Experience";
 import Heading from "./Heading";
+import ViewResume from "./Resume";
 import { ProjectDetails } from "./types";
 
 export default function AppLayout() {
@@ -18,12 +19,6 @@ export default function AppLayout() {
     qure.qureSrProject,
     qure.qureProject,
     { ...qure.qureProject, company: "123" },
-    { ...qure.qureProject, company: "1234" },
-    { ...qure.qureProject, company: "234" },
-    { ...qure.qureProject, company: "345" },
-    { ...qure.qureProject, company: "456" },
-    { ...qure.qureProject, company: "567" },
-    { ...qure.qureProject, company: "678" },
   ];
 
   return (
@@ -80,8 +75,11 @@ export default function AppLayout() {
           ) : (
             <></>
           )}
+          {/* About Section */}
           <Heading serialNumber="01." heading="about" />
           <About />
+
+          {/* Experience Section */}
           <Heading serialNumber="02." heading="experiences" />
           {projectDetails.map((projectDetail) => {
             return (
@@ -92,6 +90,16 @@ export default function AppLayout() {
               />
             );
           })}
+
+          {/* Achievements Sections */}
+          <Heading serialNumber="03." heading="resume" />
+          <ViewResume />
+
+          {/* Achievements Sections */}
+          <Heading serialNumber="04." heading="achievements" />
+
+          {/* Featured Publications */}
+          <Heading serialNumber="05." heading="featured publication" />
         </Box>
       </Box>
     </>
