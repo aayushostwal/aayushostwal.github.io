@@ -9,8 +9,9 @@ import { ProjectDetails } from "./types";
 
 export default function AppLayout() {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [hoveringProjectName, setHoveringProjectName] = useState("null");
+  const [hoveringProjectName, setHoveringProjectName] = useState("");
   console.log("hoveringProjectName", hoveringProjectName);
+  console.log("isMobile", isMobile);
   const projectDetails: ProjectDetails[] = [
     qure.qureSrProject,
     qure.qureProject,
@@ -28,18 +29,21 @@ export default function AppLayout() {
       style={{
         display: "grid",
         gridTemplateColumns: isMobile ? "1fr" : "1fr 1.2fr",
+        gridTemplateRows: isMobile ? "auto auto" : "auto",
         width: "98vw",
-        height: "98vh",
+        height: isMobile ? "auto" : "98vh", // Adjust height for mobile
         margin: 0,
         padding: 0,
-        overflow: "hidden",
+        // overflow: "hidden",
+        overflowY: isMobile ? "auto" : "hidden",
       }}
     >
       <Box
         style={{
           paddingLeft: 60,
           paddingTop: 70,
-          overflow: "auto",
+          overflow: "visible",
+          // height: "auto",
         }}
       >
         <BioSection />
@@ -48,10 +52,12 @@ export default function AppLayout() {
         style={{
           paddingLeft: 60,
           paddingTop: 70,
-          overflow: "auto",
+          ...(isMobile
+            ? { height: "100vh", overflow: "visible" }
+            : { overflow: "auto" }),
           "&:hover": {
-            backgroundColor: "lightgray", // Change to your desired hover color
-            border: "2px solid blue", // Change to your desired border style
+            backgroundColor: "lightgray",
+            border: "2px solid blue",
           },
         }}
       >
