@@ -28,7 +28,6 @@ function Heading({
           {serialNumber}
         </Text>
 
-        {/* Section Title */}
         <Text
           style={{
             fontSize: "15px", // Main title font size

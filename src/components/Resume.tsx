@@ -6,12 +6,14 @@ function ViewResume() {
     <>
       <Button
         variant="light"
+        size="xs"
         radius="xl"
         id="resume-button"
         style={{
           backgroundColor: constants.Colors.BOX_SHADOW,
           border: "2px solid transparent",
           transition: "border-color 0.3s",
+          marginLeft: 10,
         }}
         onMouseEnter={() => {
           const resumeButton = document.getElementById("resume-button");

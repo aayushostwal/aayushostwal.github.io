@@ -31,7 +31,7 @@ function BioSection() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          height: "90%",
+          height: "80%",
           minHeight: "200px",
         }}
       >
@@ -63,7 +63,7 @@ function BioSection() {
             interactive solutions.
           </Text>
         </Box>
-        <Box style={{ display: "flex", gap: "10px" }}>
+        <Box style={{ display: "flex", gap: "20px" }}>
           <IconLink Icon={FaGithub} link="https://github.com/aayushostwal" />
           <IconLink
             Icon={FaLinkedinIn}
