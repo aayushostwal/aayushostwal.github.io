@@ -32,6 +32,7 @@ function BioSection() {
           flexDirection: "column",
           justifyContent: "space-between",
           height: "90%",
+          minHeight: "200px",
         }}
       >
         <Title
@@ -58,7 +59,8 @@ function BioSection() {
 
         <Text>
           I develop end-to-end, scalable, data-driven, intuitive and interactive
-          solutions.
+          solutions. I develop end-to-end, scalable, data-driven, intuitive and
+          interactive solutions.
         </Text>
 
         <div style={{ marginTop: "auto" }}>

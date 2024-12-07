@@ -47,7 +47,7 @@ export default function Experience({
           gridTemplateColumns: "1fr 4fr",
           overflow: "hidden",
           paddingLeft: 10,
-          paddingBottom: 10,
+          paddingBottom: 5,
           marginTop: 10,
           opacity:
             hoveringProjectName === ""
@@ -62,6 +62,7 @@ export default function Experience({
         <Box
           style={{
             overflow: "auto",
+            paddingRight: 2,
           }}
         >
           <Text
@@ -99,29 +100,38 @@ export default function Experience({
             style={{
               display: "flex",
               flexDirection: "column",
-              marginLeft: -2,
-              marginTop: -20,
               overflow: "visible",
+              marginTop: -10,
             }}
           >
             {projectDetail.experience.map((item) => {
               return (
-                <Text
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    marginBottom: -10,
-                  }}
-                >
-                  <BiRightArrow
-                    size={10}
-                    color="cyan"
+                <div style={{ marginBottom: "2px" }}>
+                  <div
                     style={{
-                      paddingRight: 6,
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "4px",
                     }}
-                  />
-                  {item}
-                </Text>
+                  >
+                    <BiRightArrow
+                      size={7}
+                      color="cyan"
+                      style={{
+                        paddingTop: 5.5,
+                        flexShrink: 0,
+                      }}
+                    />
+                    <Text
+                      style={{
+                        fontSize: 12,
+                        margin: 0, // Remove extra margin
+                      }}
+                    >
+                      {item}
+                    </Text>
+                  </div>
+                </div>
               );
             })}
           </Box>

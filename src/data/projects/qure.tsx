@@ -5,7 +5,7 @@ const qureSrProject: ProjectDetails = {
   company: "AI Engineer, Qure.ai",
   link: "https://qure.ai",
   experience: [
-    "Developed scalable applications",
+    "Developed scalable applications such as qure app, lexicon and added code in metabase",
     "Implemented cloud services and APIs",
     "Led a cross-functional team",
   ],
