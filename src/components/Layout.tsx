@@ -2,7 +2,7 @@ import { Box } from "@mantine/core";
 import BioSection from "./BioSection";
 
 import { useMediaQuery } from "@mantine/hooks";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import qure from "../data/projects/qure";
 import About from "./About";
 import Experience from "./Experience";
@@ -13,13 +13,20 @@ import { ProjectDetails } from "./types";
 export default function AppLayout() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [hoveringProjectName, setHoveringProjectName] = useState("");
-  console.log("hoveringProjectName", hoveringProjectName);
-  console.log("isMobile", isMobile);
   const projectDetails: ProjectDetails[] = [
     qure.qureSrProject,
     qure.qureProject,
     { ...qure.qureProject, company: "123" },
   ];
+
+  const rightBlockRef = useRef<HTMLDivElement>(null);
+
+  const handleLeftBlockScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    const rightBlock = rightBlockRef.current;
+    if (rightBlock) {
+      rightBlock.scrollTop += e.deltaY;
+    }
+  };
 
   return (
     <>
@@ -44,12 +51,13 @@ export default function AppLayout() {
         {isMobile ? (
           <></>
         ) : (
-          <Box>
+          <Box onWheel={handleLeftBlockScroll}>
             <BioSection />
           </Box>
         )}
 
         <Box
+          ref={rightBlockRef}
           style={{
             paddingTop: 15,
             scrollbarWidth: "none",
@@ -100,6 +108,9 @@ export default function AppLayout() {
 
           {/* Featured Publications */}
           <Heading serialNumber="05." heading="featured publication" />
+
+          {/* Projects */}
+          <Heading serialNumber="06." heading="Projects" />
         </Box>
       </Box>
     </>
