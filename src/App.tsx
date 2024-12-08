@@ -11,8 +11,8 @@ export default function App() {
             width: "100vw",
             height: "100vh",
             fontSize: 13,
-            overflowX: "hidden",
-            overscrollBehavior: "none",
+            scrollbarWidth: "none",
+            msOverflowStyle: "none",
           }}
         >
           <AppLayout />
