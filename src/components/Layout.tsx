@@ -3,7 +3,7 @@ import BioSection from "./BioSection";
 
 import { useMediaQuery } from "@mantine/hooks";
 import { useRef, useState } from "react";
-import qure from "../data/projects/qure";
+import projects from "../data/projects";
 import About from "./About";
 import Experience from "./Experience";
 import Heading from "./Heading";
@@ -14,9 +14,9 @@ export default function AppLayout() {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const [hoveringProjectName, setHoveringProjectName] = useState("");
   const projectDetails: ProjectDetails[] = [
-    qure.qureSrProject,
-    qure.qureProject,
-    { ...qure.qureProject, company: "123" },
+    projects.qureSrProject,
+    projects.hilabsProject,
+    projects.materateProject,
   ];
 
   const rightBlockRef = useRef<HTMLDivElement>(null);

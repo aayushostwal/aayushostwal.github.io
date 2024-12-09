@@ -95,6 +95,11 @@ export default function Experience({
             }}
           >
             {projectDetail.company}
+            {projectDetail.is_internship ? (
+              <StyledChip text="Internship" />
+            ) : (
+              <></>
+            )}
           </Text>
           <Box
             style={{
