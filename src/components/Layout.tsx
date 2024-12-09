@@ -4,11 +4,13 @@ import BioSection from "./BioSection";
 import { useMediaQuery } from "@mantine/hooks";
 import { useRef, useState } from "react";
 import projects from "../data/projects";
+import publicationsSummary from "../data/publicationsSummary";
 import About from "./About";
 import Experience from "./Experience";
 import Heading from "./Heading";
+import Publication from "./Publications";
 import ViewResume from "./Resume";
-import { ProjectDetails } from "./types";
+import { ProjectDetails, PublicationDetail } from "./types";
 
 export default function AppLayout() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -17,6 +19,13 @@ export default function AppLayout() {
     projects.qureSrProject,
     projects.hilabsProject,
     projects.materateProject,
+  ];
+
+  const [hoveringPublication, setHoveringPublication] = useState("");
+  const publications: PublicationDetail[] = [
+    publicationsSummary.breakingSymmetry,
+    publicationsSummary.visualizations,
+    publicationsSummary.edaGuide,
   ];
 
   const rightBlockRef = useRef<HTMLDivElement>(null);
@@ -37,7 +46,7 @@ export default function AppLayout() {
           gridTemplateRows: isMobile ? "auto auto" : "auto",
           width: "auto",
           // width: "98vw",
-          height: isMobile ? "auto" : "98vh", // Adjust height for mobile
+          height: isMobile ? "auto" : "90vh", // Adjust height for mobile
           margin: 0,
           paddingTop: isMobile ? 10 : 50,
           paddingLeft: isMobile ? 20 : 60,
@@ -108,6 +117,15 @@ export default function AppLayout() {
 
           {/* Featured Publications */}
           <Heading serialNumber="05." heading="featured publication" />
+          {publications.map((publication) => {
+            return (
+              <Publication
+                publicationDetail={publication}
+                hoveringPublication={hoveringPublication}
+                setHoveringPublication={setHoveringPublication}
+              />
+            );
+          })}
 
           {/* Projects */}
           <Heading serialNumber="06." heading="Projects" />

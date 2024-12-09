@@ -6,3 +6,11 @@ export interface ProjectDetails {
   experience: string[];
   skills: string[];
 }
+
+
+export interface PublicationDetail {
+  heading: string;
+  link: string;
+  summary: string;
+  thumbnail: string
+}

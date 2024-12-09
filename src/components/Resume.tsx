@@ -11,7 +11,7 @@ function ViewResume() {
           size="xs"
           id="resume-button"
           style={{
-            marginLeft: 35,
+            marginLeft: 37,
             marginTop: -5,
             color: constants.Colors.TEXT,
           }}
