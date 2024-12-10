@@ -1,6 +1,6 @@
-import { ProjectDetails } from "../components/types";
+import { ExperienceDetails, ProjectDetails } from "../components/types";
 
-const qureSrProject: ProjectDetails = {
+const qureSrExp: ExperienceDetails = {
   year: "2022 - PRESENT",
   company: "Senior Backend Engineer, Qure.ai",
   is_internship: false,
@@ -24,7 +24,7 @@ const qureSrProject: ProjectDetails = {
   achievements: ["Value Champion Award - 2024"],
 };
 
-const hilabsProject: ProjectDetails = {
+const hilabsExp: ExperienceDetails = {
   year: "2021 - 22",
   company: "Data Scientist, HiLabs",
   link: "https://hilabs.com",
@@ -38,7 +38,7 @@ const hilabsProject: ProjectDetails = {
   skills: ["PySpark", "Scala", "Hadoop", "Bash"],
 };
 
-const materateProject: ProjectDetails = {
+const materateExp: ExperienceDetails = {
   year: "MAY - JULY 2020",
   company: "Data Analyst, Materate Education",
   link: "null",
@@ -50,8 +50,17 @@ const materateProject: ProjectDetails = {
   skills: ["Pandas", "Numpy", "Python"],
 };
 
+// Project Details
+const website: ProjectDetails = {
+  heading: "Personal Website",
+  link: "https://github.com/aayushostwal/aayushostwal.github.io",
+  desc: "Build personal website using Vite.js and github pages",
+  thumbnail:
+    "https://images.unsplash.com/photo-1590595906931-81f04f0ccebb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+};
 export default {
-  qureSrProject,
-  hilabsProject,
-  materateProject,
+  qureSrProject: qureSrExp,
+  hilabsProject: hilabsExp,
+  website,
+  materateProject: materateExp,
 };

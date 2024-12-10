@@ -2,7 +2,7 @@ import { Box, Text } from "@mantine/core";
 import { BiRightArrow } from "react-icons/bi";
 import { CiTrophy } from "react-icons/ci";
 import constants from "../../constants";
-import { ProjectDetails } from "../types";
+import { ExperienceDetails } from "../types";
 
 function StyledChip({ text }: { text: string }) {
   return (
@@ -30,7 +30,7 @@ export default function Experience({
   hoveringProjectName,
   setHoveringProjectName,
 }: {
-  projectDetail: ProjectDetails;
+  projectDetail: ExperienceDetails;
   hoveringProjectName: string;
   setHoveringProjectName: React.Dispatch<React.SetStateAction<string>>;
 }) {

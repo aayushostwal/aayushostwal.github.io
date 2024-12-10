@@ -8,14 +8,15 @@ import publicationsSummary from "../data/publicationsSummary";
 import About from "./About";
 import Experience from "./Experience";
 import Heading from "./Heading";
+import Projects from "./Projects";
 import Publication from "./Publications";
 import ViewResume from "./Resume";
-import { ProjectDetails, PublicationDetail } from "./types";
+import { ExperienceDetails, ProjectDetails, PublicationDetail } from "./types";
 
 export default function AppLayout() {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const [hoveringProjectName, setHoveringProjectName] = useState("");
-  const projectDetails: ProjectDetails[] = [
+  const [hoveringExpName, setHoveringExpName] = useState("");
+  const ExpDetails: ExperienceDetails[] = [
     projects.qureSrProject,
     projects.hilabsProject,
     projects.materateProject,
@@ -27,6 +28,9 @@ export default function AppLayout() {
     publicationsSummary.visualizations,
     publicationsSummary.edaGuide,
   ];
+
+  const [hoveringProjectName, setHoveringProjectName] = useState("");
+  const projectDetails: ProjectDetails[] = [projects.website];
 
   const rightBlockRef = useRef<HTMLDivElement>(null);
 
@@ -98,17 +102,17 @@ export default function AppLayout() {
 
           {/* Experience Section */}
           <Heading serialNumber="02." heading="experiences" />
-          {projectDetails.map((projectDetail) => {
+          {ExpDetails.map((projectDetail) => {
             return (
               <Experience
                 projectDetail={projectDetail}
-                hoveringProjectName={hoveringProjectName}
-                setHoveringProjectName={setHoveringProjectName}
+                hoveringProjectName={hoveringExpName}
+                setHoveringProjectName={setHoveringExpName}
               />
             );
           })}
 
-          {/* Achievements Sections */}
+          {/* Resume Section */}
           <Heading serialNumber="03." heading="resume" />
           <ViewResume />
 
@@ -126,6 +130,15 @@ export default function AppLayout() {
 
           {/* Projects */}
           <Heading serialNumber="06." heading="Projects" />
+          {projectDetails.map((project) => {
+            return (
+              <Projects
+                projectDetail={project}
+                hoveringProject={hoveringProjectName}
+                setHoveringProject={setHoveringProjectName}
+              />
+            );
+          })}
         </Box>
       </Box>
     </>

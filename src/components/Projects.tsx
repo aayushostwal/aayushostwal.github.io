@@ -1,24 +1,24 @@
 import { Anchor, Box, Image, Text, Title } from "@mantine/core";
 import { MdArrowOutward } from "react-icons/md";
 import constants from "../constants";
-import { PublicationDetail } from "./types";
-function Publication({
-  publicationDetail,
-  hoveringPublication,
-  setHoveringPublication,
+import { ProjectDetails } from "./types";
+function Projects({
+  projectDetail,
+  hoveringProject,
+  setHoveringProject,
 }: {
-  publicationDetail: PublicationDetail;
-  hoveringPublication: string;
-  setHoveringPublication: React.Dispatch<React.SetStateAction<string>>;
+  projectDetail: ProjectDetails;
+  hoveringProject: string;
+  setHoveringProject: React.Dispatch<React.SetStateAction<string>>;
 }) {
   return (
     <>
-      <Anchor href={publicationDetail.link} target="_blank">
+      <Anchor href={projectDetail.link} target="_blank">
         <Box
           style={{
             transition: "background-color 0.3s ease", // Smooth transition
             backgroundColor:
-              hoveringPublication === publicationDetail.heading
+              hoveringProject === projectDetail.heading
                 ? constants.Colors.BOX_SHADOW + "40"
                 : "transparent",
             display: "grid",
@@ -30,16 +30,16 @@ function Publication({
             marginTop: 10,
             minHeight: "110px",
             opacity:
-              hoveringPublication === ""
+              hoveringProject === ""
                 ? "100%"
-                : hoveringPublication !== publicationDetail.heading
+                : hoveringProject !== projectDetail.heading
                 ? "50%"
                 : "100%",
           }}
           onMouseEnter={() => {
-            setHoveringPublication(publicationDetail.heading);
+            setHoveringProject(projectDetail.heading);
             const button = document.getElementById(
-              `publication-icon-${publicationDetail.heading}`
+              `publication-icon-${projectDetail.heading}`
             );
             if (button) {
               button.style.color = "cyan";
@@ -50,9 +50,9 @@ function Publication({
             }
           }}
           onMouseLeave={() => {
-            setHoveringPublication("");
+            setHoveringProject("");
             const button = document.getElementById(
-              `publication-icon-${publicationDetail.heading}`
+              `publication-icon-${projectDetail.heading}`
             );
             if (button) {
               button.style.color = constants.Colors.TEXT;
@@ -76,7 +76,7 @@ function Publication({
                 radius="md"
                 width={120}
                 height={80}
-                src={publicationDetail.thumbnail}
+                src={projectDetail.thumbnail}
                 alt="Random unsplash image"
                 style={{
                   borderRadius: 12,
@@ -93,14 +93,12 @@ function Publication({
               order={3}
               style={{
                 color:
-                  hoveringPublication === publicationDetail.heading
-                    ? "cyan"
-                    : "white",
+                  hoveringProject === projectDetail.heading ? "cyan" : "white",
               }}
             >
               <div style={{ display: "flex", alignItems: "center" }}>
                 <span style={{ display: "flex", alignItems: "center" }}>
-                  {publicationDetail.heading}
+                  {projectDetail.heading}
                 </span>
                 <span
                   style={{
@@ -110,7 +108,7 @@ function Publication({
                   }}
                 >
                   <MdArrowOutward
-                    id={`publication-icon-${publicationDetail.heading}`}
+                    id={`publication-icon-${projectDetail.heading}`}
                   />
                 </span>
               </div>
@@ -120,7 +118,7 @@ function Publication({
                 color: constants.Colors.TEXT,
               }}
             >
-              {publicationDetail.summary}
+              {projectDetail.desc}
             </Text>
           </Box>
         </Box>
@@ -129,4 +127,4 @@ function Publication({
   );
 }
 
-export default Publication;
+export default Projects;
