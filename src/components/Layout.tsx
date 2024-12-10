@@ -112,11 +112,8 @@ export default function AppLayout() {
           <Heading serialNumber="03." heading="resume" />
           <ViewResume />
 
-          {/* Achievements Sections */}
-          <Heading serialNumber="04." heading="achievements" />
-
           {/* Featured Publications */}
-          <Heading serialNumber="05." heading="featured publication" />
+          <Heading serialNumber="04." heading="featured publication" />
           {publications.map((publication) => {
             return (
               <Publication

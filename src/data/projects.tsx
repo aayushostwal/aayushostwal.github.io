@@ -21,6 +21,7 @@ const qureSrProject: ProjectDetails = {
     "PostgreSQL",
     "Jenkins",
   ],
+  achievements: ["Value Champion Award - 2024"],
 };
 
 const hilabsProject: ProjectDetails = {

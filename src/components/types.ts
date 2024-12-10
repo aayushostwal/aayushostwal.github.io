@@ -5,6 +5,7 @@ export interface ProjectDetails {
   link: string;
   experience: string[];
   skills: string[];
+  achievements?: string[];
 }
 
 

@@ -1,5 +1,6 @@
 import { Box, Text } from "@mantine/core";
 import { BiRightArrow } from "react-icons/bi";
+import { CiTrophy } from "react-icons/ci";
 import constants from "../../constants";
 import { ProjectDetails } from "../types";
 
@@ -140,6 +141,46 @@ export default function Experience({
               );
             })}
           </Box>
+          <Box
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              overflow: "visible",
+            }}
+          >
+            {projectDetail.achievements?.map((item) => {
+              return (
+                <div style={{ marginBottom: "2px", paddingTop: "15px" }}>
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "flex-start",
+                      gap: "4px",
+                    }}
+                  >
+                    <CiTrophy
+                      size={15}
+                      color="cyan"
+                      style={{
+                        paddingTop: 2,
+                        flexShrink: 0,
+                      }}
+                    />
+                    <Text
+                      style={{
+                        color: "cyan",
+                        fontSize: 12,
+                        margin: 0, // Remove extra margin
+                      }}
+                    >
+                      {item}
+                    </Text>
+                  </div>
+                </div>
+              );
+            })}
+          </Box>
+
           <Box
             style={{
               marginTop: 20,
