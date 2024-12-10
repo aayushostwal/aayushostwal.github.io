@@ -1,5 +1,5 @@
+import { Box } from "@mantine/core";
 import React, { createContext, useContext, useState } from "react";
-import constants from "../constants";
 
 // Optional: Create Context to share cursor data
 const CursorContext = createContext({ x: 0, y: 0 });
@@ -17,7 +17,7 @@ const CursorShadowProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <CursorContext.Provider value={cursorPosition}>
-      <div
+      <Box
         onMouseMove={handleMouseMove}
         style={{
           position: "relative",
@@ -27,30 +27,32 @@ const CursorShadowProvider = ({ children }: { children: React.ReactNode }) => {
         }}
       >
         {/* Render the shadow */}
-        <div
+        <Box
           style={{
             position: "absolute",
-            top: cursorPosition.y - 20, // Offset for centering
-            left: cursorPosition.x - 25,
-            width: "100px",
-            height: "100px",
+            top: cursorPosition.y - 500, // Offset for centering
+            left: cursorPosition.x - 500,
+            width: "1000px",
+            height: "1000px",
             borderRadius: "70%",
-            backgroundColor: constants.Colors.SHADOW,
-            boxShadow: `0 0 1000px 200px ${constants.Colors.SHADOW}`,
+            // backgroundColor: "white",
+            background: `radial-gradient(#94A3B8, rgb(16, 28, 61), rgb(16, 28, 61))`,
             pointerEvents: "none", // Prevent interaction
+            opacity: "5%",
             zIndex: 0,
           }}
         />
         {/* Render child components */}
-        <div
+        <Box
           style={{
             position: "relative",
+            opacity: "100%",
             zIndex: 1, // Ensure children are above the shadow
           }}
         >
           {children}
-        </div>
-      </div>
+        </Box>
+      </Box>
     </CursorContext.Provider>
   );
 };
