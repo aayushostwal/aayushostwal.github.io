@@ -1,4 +1,4 @@
-import { Box } from "@mantine/core";
+import { Box, Text } from "@mantine/core";
 import BioSection from "./BioSection";
 
 import { useMediaQuery } from "@mantine/hooks";
@@ -139,6 +139,19 @@ export default function AppLayout() {
               />
             );
           })}
+          <Box
+            style={{
+              paddingTop: 60,
+              fontSize: 10,
+              color: "gray",
+            }}
+          >
+            <Text size="xs">
+              Built with Vite.js and Typescript, deployed with Github Pages.
+              Designs are inspired by{" "}
+              <a href="https://brittanychiang.com/">Brittany Chiang</a>.
+            </Text>
+          </Box>
         </Box>
       </Box>
     </>
