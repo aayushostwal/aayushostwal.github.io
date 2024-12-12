@@ -1,14 +1,17 @@
 import { Box, Text } from "@mantine/core";
 import { useHover } from "@mantine/hooks";
+import { useRef } from "react";
 import constants from "../constants";
 
 function HoverComponent({ label }: { label: string }) {
   const { hovered, ref } = useHover<HTMLSpanElement>();
+  const spanRef = useRef<HTMLSpanElement>(null);
+
   return (
     <>
       <Box
         component="span"
-        ref={ref}
+        ref={spanRef}
         style={{
           color: hovered ? "cyan" : constants.Colors.TEXT,
           transition: "color 0.3s",
