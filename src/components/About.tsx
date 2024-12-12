@@ -8,7 +8,7 @@ function HoverComponent({ label }: { label: string }) {
     <>
       <Box
         component="span"
-        ref={ref}
+        ref={ref as React.RefObject<HTMLDivElement>}
         style={{
           color: hovered ? "cyan" : constants.Colors.TEXT,
           transition: "color 0.3s",
