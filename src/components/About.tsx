@@ -4,7 +4,7 @@ import { useRef } from "react";
 import constants from "../constants";
 
 function HoverComponent({ label }: { label: string }) {
-  const { hovered, ref } = useHover<HTMLSpanElement>();
+  const { hovered } = useHover<HTMLSpanElement>();
   const spanRef = useRef<HTMLSpanElement>(null);
 
   return (
