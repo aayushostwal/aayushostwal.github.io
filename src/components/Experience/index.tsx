@@ -4,7 +4,13 @@ import { CiTrophy } from "react-icons/ci";
 import constants from "../../constants";
 import { ExperienceDetails } from "../types";
 
-function StyledChip({ text }: { text: string }) {
+function StyledChip({
+  text,
+  sx = {},
+}: {
+  text: string;
+  sx?: Record<string, any>;
+}) {
   return (
     <Box
       style={{
@@ -19,6 +25,7 @@ function StyledChip({ text }: { text: string }) {
         width: "fit-content",
         marginRight: 3,
         marginBottom: 3,
+        ...sx,
       }}
     >
       {text}
@@ -95,12 +102,15 @@ export default function Experience({
               fontSize: 16,
             }}
           >
-            {projectDetail.company}
-            {projectDetail.is_internship ? (
-              <StyledChip text="Internship" />
-            ) : (
-              <></>
-            )}
+            <Box>
+              {projectDetail.company}
+
+              {projectDetail.is_internship ? (
+                <StyledChip text="Internship" sx={{ marginLeft: 10 }} />
+              ) : (
+                <></>
+              )}
+            </Box>
           </Text>
           <Box
             style={{
