@@ -10,7 +10,7 @@ export default function App() {
           style={{
             width: "100vw",
             height: "100vh",
-            fontSize: 13,
+            fontSize: 16,
             scrollbarWidth: "none",
             msOverflowStyle: "none",
           }}

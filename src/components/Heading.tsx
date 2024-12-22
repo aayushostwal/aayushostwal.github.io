@@ -19,7 +19,7 @@ function Heading({
         {/* Section Number */}
         <Text
           style={{
-            fontSize: "13px", // Adjust size as needed
+            fontSize: 18, // Adjust size as needed
             fontWeight: "bold",
             color: "cyan", // Greenish color for "02."
             marginRight: "8px", // Space to the next text
@@ -30,7 +30,7 @@ function Heading({
 
         <Text
           style={{
-            fontSize: "15px", // Main title font size
+            fontSize: 18, // Main title font size
             fontWeight: "600", // Semi-bold
           }}
         >

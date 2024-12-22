@@ -117,7 +117,7 @@ export default function AppLayout() {
           <ViewResume />
 
           {/* Featured Publications */}
-          <Heading serialNumber="04." heading="featured publication" />
+          <Heading serialNumber="04." heading="Writings" />
           {publications.map((publication) => {
             return (
               <Publication

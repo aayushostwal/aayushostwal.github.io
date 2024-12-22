@@ -51,11 +51,11 @@ function BioSection() {
             style={{
               marginTop: -15,
               fontWeight: 500,
-              fontSize: 15,
+              fontSize: 21,
               color: "#E2E8F0",
             }}
           >
-            Senior Backend Engineer
+            Sr. Backend Engineer
           </Text>
 
           <Text>

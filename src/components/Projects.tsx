@@ -28,6 +28,7 @@ function Projects({
             paddingLeft: 10,
             paddingBottom: 5,
             marginTop: 10,
+            fontSize: 12,
             minHeight: "110px",
             opacity:
               hoveringProject === ""

@@ -44,8 +44,10 @@ function ViewResume() {
             }
           }}
         >
-          <div style={{ display: "flex", alignItems: "center" }}>
-            <span style={{ display: "flex", alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "center", fontSize: 14 }}>
+            <span
+              style={{ display: "flex", alignItems: "center", paddingLeft: 6 }}
+            >
               View full Resume
             </span>
             <span
