@@ -147,8 +147,8 @@ export default function AppLayout() {
             }}
           >
             <Text size="xs">
-              Built with Vite.js and Typescript, deployed with Github Pages.
-              Designs are inspired by{" "}
+              Built with Vite.js and Typescript, deployed with Vercel. Designs
+              are inspired by{" "}
               <a href="https://brittanychiang.com/">Brittany Chiang</a>.
             </Text>
           </Box>
