@@ -38,7 +38,7 @@ function BioSection() {
       >
         <Box>
           <Image
-            src={"profile.svg"}
+            src={"profile.png"}
             style={{
               height: "50%",
               width: "43%",
