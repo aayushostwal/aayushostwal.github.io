@@ -1,4 +1,4 @@
-import { Anchor, Box, Image, Text, Title } from "@mantine/core";
+import { Anchor, Avatar, Box, Image, Text, Title } from "@mantine/core";
 import { IconType } from "react-icons";
 import { FaGithub, FaLinkedinIn, FaMediumM } from "react-icons/fa";
 import { IoMdMailUnread } from "react-icons/io";
@@ -37,14 +37,16 @@ function BioSection() {
         }}
       >
         <Box>
-          <Image
-            src={"profile.png"}
-            style={{
-              height: "50%",
-              width: "43%",
-              borderRadius: 1000,
-            }}
-          />
+          {/* <Avatar src="profile.png" alt="it's me" size={"xs"} /> */}
+          <Avatar radius="xl">
+            <Image
+              src={"profile.png"}
+              style={{
+                width: "40%",
+                borderRadius: 1000000,
+              }}
+            />
+          </Avatar>
           <Title
             order={1}
             size="h1"

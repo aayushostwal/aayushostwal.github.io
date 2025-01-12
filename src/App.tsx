@@ -1,6 +1,6 @@
 import { Box, MantineProvider } from "@mantine/core";
 import CursorShadowProvider from "./components/CursorShadow";
-import AppLayout from "./components/Layout";
+import AppLayout from "./components/Home";
 
 export default function App() {
   return (
