@@ -2,6 +2,7 @@ import { Box, MantineProvider } from "@mantine/core";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import CursorShadowProvider from "./components/CursorShadow";
 import AppLayout from "./components/Home";
+import Writings from "./components/WritingAndProjects";
 
 export default function App() {
   return (
@@ -19,7 +20,7 @@ export default function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<AppLayout />} />
-              {/* <Route path="/about" element={<AboutPage />} /> */}
+              <Route path="/articles" element={<Writings />} />
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </BrowserRouter>
