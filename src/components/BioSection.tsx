@@ -40,8 +40,8 @@ function BioSection() {
           {/* <Avatar src="profile.png" alt="it's me" size={"xs"} /> */}
           <Box
             style={{
-              width: 300,
-              height: 300,
+              width: 250,
+              height: 250,
               borderRadius: "50%",
               overflow: "hidden",
             }}
@@ -50,7 +50,7 @@ function BioSection() {
               src={"profile.png"}
               alt="Circular"
               fit="cover"
-              style={{ width: 300, height: 300 }}
+              style={{ width: 250, height: 250 }}
             />
           </Box>
           <Title
