@@ -1,4 +1,5 @@
 import { Box, MantineProvider } from "@mantine/core";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import CursorShadowProvider from "./components/CursorShadow";
 import AppLayout from "./components/Home";
 
@@ -15,7 +16,13 @@ export default function App() {
             msOverflowStyle: "none",
           }}
         >
-          <AppLayout />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<AppLayout />} />
+              {/* <Route path="/about" element={<AboutPage />} /> */}
+              <Route path="*" element={<Navigate to="/" replace />} />
+            </Routes>
+          </BrowserRouter>
         </Box>
       </CursorShadowProvider>
     </MantineProvider>
