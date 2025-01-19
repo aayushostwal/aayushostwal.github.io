@@ -28,6 +28,7 @@ const CursorShadowProvider = ({ children }: { children: React.ReactNode }) => {
       >
         {/* Render the shadow */}
         <Box
+          id="cursor_shadow"
           style={{
             position: "absolute",
             top: cursorPosition.y - 500, // Offset for centering
@@ -44,6 +45,7 @@ const CursorShadowProvider = ({ children }: { children: React.ReactNode }) => {
         />
         {/* Render child components */}
         <Box
+          id="cursor_shadow_1"
           style={{
             position: "relative",
             opacity: "100%",

@@ -45,6 +45,7 @@ export default function AppLayout() {
   return (
     <>
       <BaseLayout
+        id={"home"}
         leftComponent={
           <>
             {isMobile ? (

@@ -3,18 +3,17 @@ import { useMediaQuery } from "@mantine/hooks";
 import { ReactNode } from "react";
 
 interface BaseLayoutProps {
+  id: string;
   leftComponent: ReactNode;
   rightComponent: ReactNode;
 }
 
-export default function BaseLayout({
-  leftComponent,
-  rightComponent,
-}: BaseLayoutProps) {
+export default function BaseLayout({ id, leftComponent, rightComponent }: BaseLayoutProps) {
   const isMobile = useMediaQuery("(max-width: 768px)");
   return (
     <>
       <Box
+        id={id}
         style={{
           display: "grid",
           gridTemplateColumns: isMobile ? "1fr" : "1fr 1.2fr",
