@@ -2,36 +2,10 @@ import { Box, Text } from "@mantine/core";
 import { BiRightArrow } from "react-icons/bi";
 import { CiTrophy } from "react-icons/ci";
 import constants from "../../constants";
+import StyledChip from "../StyledChip";
 import { ExperienceDetails } from "../types";
 
-function StyledChip({
-  text,
-  sx = {},
-}: {
-  text: string;
-  sx?: Record<string, any>;
-}) {
-  return (
-    <Box
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        padding: "4px 12px",
-        borderRadius: "9999px",
-        backgroundColor: "#2DD4bf1a",
-        color: "cyan",
-        fontSize: "11px",
-        whiteSpace: "nowrap",
-        width: "fit-content",
-        marginRight: 3,
-        marginBottom: 3,
-        ...sx,
-      }}
-    >
-      {text}
-    </Box>
-  );
-}
+
 export default function Experience({
   projectDetail,
   hoveringProjectName,

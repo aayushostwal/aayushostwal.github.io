@@ -21,3 +21,6 @@ export interface ProjectDetails {
   desc: string
   thumbnail: string
 }
+export interface ArticleDetails extends PublicationDetail {
+  tags: string[]
+}

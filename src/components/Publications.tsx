@@ -1,13 +1,14 @@
 import { Anchor, Box, Image, Text, Title } from "@mantine/core";
 import { MdArrowOutward } from "react-icons/md";
 import constants from "../constants";
-import { PublicationDetail } from "./types";
+import StyledChip from "./StyledChip";
+import { ArticleDetails, PublicationDetail } from "./types";
 function Publication({
   publicationDetail,
   hoveringPublication,
   setHoveringPublication,
 }: {
-  publicationDetail: PublicationDetail;
+  publicationDetail: ArticleDetails | PublicationDetail;
   hoveringPublication: string;
   setHoveringPublication: React.Dispatch<React.SetStateAction<string>>;
 }) {
@@ -123,6 +124,10 @@ function Publication({
             >
               {publicationDetail.summary}
             </Text>
+            {"tags" in publicationDetail &&
+              publicationDetail.tags.map((tag: string) => (
+                <StyledChip key={tag} text={tag} />
+              ))}
           </Box>
         </Box>
       </Anchor>
