@@ -6,14 +6,16 @@ function CustomAnchor({
   id,
   text,
   href,
+  redirectToNewPage = false,
 }: {
   id: string;
   text: string;
   href: string;
+  redirectToNewPage: boolean;
 }) {
   return (
     <>
-      <Anchor key={id} href={href} target="_blank">
+      <Anchor key={id} href={href} target={redirectToNewPage ? "_target" : ""}>
         <Text
           variant="light"
           size="xs"

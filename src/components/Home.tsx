@@ -105,7 +105,12 @@ export default function AppLayout() {
 
               {/* Resume Section */}
               <Heading serialNumber="03." heading="resume" />
-              <CustomAnchor id="resume" text="View Resume" href="/resume.pdf" />
+              <CustomAnchor
+                id="resume"
+                text="View Resume"
+                href="/resume.pdf"
+                redirectToNewPage={true}
+              />
 
               {/* Featured Publications */}
               <Heading serialNumber="04." heading="Writings" />
@@ -117,7 +122,12 @@ export default function AppLayout() {
                     marginLeft: -35,
                   }}
                 >
-                  <CustomAnchor id="articles" text="here" href="/articles" />
+                  <CustomAnchor
+                    id="articles"
+                    text="here"
+                    href="/articles"
+                    redirectToNewPage={false}
+                  />
                 </Box>
               </Box>
               <Text style={{ color: "white" }}>Featured Articles:</Text>
