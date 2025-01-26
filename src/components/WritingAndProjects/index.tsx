@@ -1,5 +1,6 @@
 import { Box, Text } from "@mantine/core";
-import { useEffect, useState } from "react";
+import { useMediaQuery } from "@mantine/hooks";
+import { useEffect, useRef, useState } from "react";
 import { FaCheck } from "react-icons/fa";
 import { IoMdArrowBack } from "react-icons/io";
 import article from "../../data/article";
@@ -83,6 +84,60 @@ function BackButton() {
   );
 }
 
+function LeftComponent({
+  handleLeftBlockScroll,
+  topicList,
+  selectedTopics,
+  updateSelectedTopic,
+}: {
+  handleLeftBlockScroll: (e: React.WheelEvent<HTMLDivElement>) => void;
+  topicList: string[];
+  selectedTopics: string[];
+  updateSelectedTopic: (topic: string) => void;
+}) {
+  return (
+    <>
+      <Box onWheel={handleLeftBlockScroll}>
+        <BackButton />
+        <Box id={"articles_tags"}>
+          <Text
+            fw={500}
+            style={{
+              color: "white",
+              fontSize: 15,
+              display: "inline-flex",
+              paddingTop: 7,
+            }}
+          >
+            <Box>
+              I write on lot of topics, Please select Tags to filter the
+              article.
+            </Box>
+          </Text>
+          <Box>
+            {topicList.map((topic) => (
+              <StyledChip
+                key={topic}
+                text={topic}
+                suffix={
+                  " [" +
+                  article.ArticleList.filter((x) => x.tags.includes(topic))
+                    .length +
+                  "]"
+                }
+                prefix=""
+                selected={selectedTopics.includes(topic)}
+                onClickFunction={updateSelectedTopic}
+                sx={{ marginLeft: 10, fontSize: "14px" }}
+              />
+            ))}
+          </Box>
+        </Box>
+      </Box>
+    </>
+  );
+}
+
 export default function Writings() {
   const topicList = Object.values(article.ArticleTags);
 
@@ -91,6 +146,7 @@ export default function Writings() {
   ]);
 
   const [hoveringPublication, setHoveringPublication] = useState("");
+  const isMobile = useMediaQuery("(max-width: 821px)");
   const updateSelectedTopic = (topic: string) => {
     const topicVal = topic;
     if (selectedTopics.includes(topicVal)) {
@@ -110,51 +166,56 @@ export default function Writings() {
     setSelectedArticles(filteredArticles);
   }, [selectedTopics]);
 
+  const rightBlockRef = useRef<HTMLDivElement>(null);
+  const handleLeftBlockScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    const rightBlock = rightBlockRef.current;
+    if (rightBlock) {
+      rightBlock.scrollTop += e.deltaY;
+    }
+  };
+  console.log("isMobile", isMobile);
   return (
     <>
       <BaseLayout
         id={"writings"}
         leftComponent={
-          <Box>
-            <BackButton />
-            <Box id={"articles_tags"}>
-              <Text
-                fw={500}
-                style={{
-                  color: "white",
-                  fontSize: 15,
-                  display: "inline-flex",
-                  paddingTop: 7,
-                }}
-              >
-                <Box>
-                  I write on lot of topics, Please select Tags to filter the
-                  article.
-                </Box>
-              </Text>
-              <Box>
-                {topicList.map((topic) => (
-                  <StyledChip
-                    key={topic}
-                    text={topic}
-                    suffix={
-                      " [" +
-                      article.ArticleList.filter((x) => x.tags.includes(topic))
-                        .length +
-                      "]"
-                    }
-                    prefix=""
-                    selected={selectedTopics.includes(topic)}
-                    onClickFunction={updateSelectedTopic}
-                    sx={{ marginLeft: 10, fontSize: "14px" }}
-                  />
-                ))}
-              </Box>
-            </Box>
-          </Box>
+          <>
+            {isMobile ? (
+              <></>
+            ) : (
+              <>
+                <LeftComponent
+                  handleLeftBlockScroll={handleLeftBlockScroll}
+                  topicList={topicList}
+                  selectedTopics={selectedTopics}
+                  updateSelectedTopic={updateSelectedTopic}
+                />
+              </>
+            )}
+          </>
         }
         rightComponent={
-          <Box>
+          <Box
+            ref={rightBlockRef}
+            style={{
+              scrollbarWidth: "none",
+              ...(isMobile
+                ? { height: "90vh", overflow: "auto" }
+                : { overflow: "auto", paddingLeft: 20 }),
+            }}
+          >
+            {isMobile ? (
+              <>
+                <LeftComponent
+                  handleLeftBlockScroll={handleLeftBlockScroll}
+                  topicList={topicList}
+                  selectedTopics={selectedTopics}
+                  updateSelectedTopic={updateSelectedTopic}
+                />
+              </>
+            ) : (
+              <></>
+            )}
             <Box
               style={{
                 display: "inline-flex",
