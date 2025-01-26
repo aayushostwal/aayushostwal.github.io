@@ -3,16 +3,16 @@ import BioSection from "./BioSection";
 
 import { useMediaQuery } from "@mantine/hooks";
 import { useRef, useState } from "react";
+import article from "../data/article";
 import projects from "../data/projects";
-import publicationsSummary from "../data/publicationsSummary";
 import About from "./About";
 import Experience from "./Experience";
 import Heading from "./Heading";
 import BaseLayout from "./Layout";
 import Projects from "./Projects";
 import Publication from "./Publications";
-import ViewResume from "./Resume";
-import { ExperienceDetails, ProjectDetails, PublicationDetail } from "./types";
+import CustomAnchor from "./Resume";
+import { ArticleDetails, ExperienceDetails, ProjectDetails } from "./types";
 
 export default function AppLayout() {
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -24,10 +24,10 @@ export default function AppLayout() {
   ];
 
   const [hoveringPublication, setHoveringPublication] = useState("");
-  const publications: PublicationDetail[] = [
-    publicationsSummary.breakingSymmetry,
-    publicationsSummary.visualizations,
-    publicationsSummary.edaGuide,
+  const publications: ArticleDetails[] = [
+    article.ArticleList[0],
+    article.ArticleList[1],
+    article.ArticleList[2],
   ];
 
   const [hoveringProjectName, setHoveringProjectName] = useState("");
@@ -95,6 +95,7 @@ export default function AppLayout() {
               {ExpDetails.map((projectDetail) => {
                 return (
                   <Experience
+                    key={projectDetail.link}
                     projectDetail={projectDetail}
                     hoveringProjectName={hoveringExpName}
                     setHoveringProjectName={setHoveringExpName}
@@ -104,10 +105,22 @@ export default function AppLayout() {
 
               {/* Resume Section */}
               <Heading serialNumber="03." heading="resume" />
-              <ViewResume />
+              <CustomAnchor id="resume" text="View Resume" href="/resume.pdf" />
 
               {/* Featured Publications */}
               <Heading serialNumber="04." heading="Writings" />
+              <Box style={{ display: "inline-flex" }}>
+                View all my articles now in a collated way
+                <Box
+                  style={{
+                    marginTop: 7,
+                    marginLeft: -35,
+                  }}
+                >
+                  <CustomAnchor id="articles" text="here" href="/articles" />
+                </Box>
+              </Box>
+              <Text style={{ color: "white" }}>Featured Articles:</Text>
               {publications.map((publication) => {
                 return (
                   <Publication

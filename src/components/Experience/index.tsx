@@ -7,10 +7,12 @@ import { ExperienceDetails } from "../types";
 
 
 export default function Experience({
+  key,
   projectDetail,
   hoveringProjectName,
   setHoveringProjectName,
 }: {
+  key: string;
   projectDetail: ExperienceDetails;
   hoveringProjectName: string;
   setHoveringProjectName: React.Dispatch<React.SetStateAction<string>>;
@@ -18,6 +20,7 @@ export default function Experience({
   return (
     <>
       <Box
+          key={key}
         style={{
           transition: "background-color 0.3s ease", // Smooth transition
           backgroundColor:

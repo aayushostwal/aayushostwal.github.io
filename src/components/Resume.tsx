@@ -2,27 +2,35 @@ import { Anchor, Text } from "@mantine/core";
 import { MdArrowOutward } from "react-icons/md";
 import constants from "../constants";
 
-function ViewResume() {
+function CustomAnchor({
+  id,
+  text,
+  href,
+}: {
+  id: string;
+  text: string;
+  href: string;
+}) {
   return (
     <>
-      <Anchor href="/resume.pdf" target="_blank">
+      <Anchor key={id} href={href} target="_blank">
         <Text
           variant="light"
           size="xs"
-          id="resume-button"
+          id={id}
           style={{
             marginLeft: 37,
             marginTop: -5,
             color: constants.Colors.TEXT,
           }}
           onMouseEnter={() => {
-            const resumeButton = document.getElementById("resume-button");
+            const resumeButton = document.getElementById(id);
             if (resumeButton) {
               resumeButton.style.color = "cyan";
               resumeButton.style.fontWeight = "500";
               resumeButton.style.textShadow = "10px";
             }
-            const icon = document.getElementById("resume-icon");
+            const icon = document.getElementById(id + "-icon");
             if (icon) {
               // icon.style.fontSize = "20";
               icon.style.paddingLeft = "4px";
@@ -30,13 +38,13 @@ function ViewResume() {
             }
           }}
           onMouseLeave={() => {
-            const resumeButton = document.getElementById("resume-button");
+            const resumeButton = document.getElementById(id);
             if (resumeButton) {
               resumeButton.style.color = constants.Colors.TEXT;
               resumeButton.style.fontWeight = "100";
               resumeButton.style.textShadow = "10px";
             }
-            const icon = document.getElementById("resume-icon");
+            const icon = document.getElementById(id + "-icon");
             if (icon) {
               // icon.style.fontSize = "15";
               icon.style.paddingLeft = "0px";
@@ -48,12 +56,12 @@ function ViewResume() {
             <span
               style={{ display: "flex", alignItems: "center", paddingLeft: 6 }}
             >
-              View full Resume
+              {text}
             </span>
             <span
               style={{ display: "flex", alignItems: "center", paddingLeft: 3 }}
             >
-              <MdArrowOutward id="resume-icon" />
+              <MdArrowOutward id={id + "-icon"} />
             </span>
           </div>
         </Text>
@@ -61,4 +69,4 @@ function ViewResume() {
     </>
   );
 }
-export default ViewResume;
+export default CustomAnchor;
