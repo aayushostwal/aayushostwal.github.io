@@ -15,7 +15,7 @@ import CustomAnchor from "./Resume";
 import { ArticleDetails, ExperienceDetails, ProjectDetails } from "./types";
 
 export default function AppLayout() {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 821px)");
   const [hoveringExpName, setHoveringExpName] = useState("");
   const ExpDetails: ExperienceDetails[] = [
     projects.qureSrProject,

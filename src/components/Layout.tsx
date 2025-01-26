@@ -9,7 +9,7 @@ interface BaseLayoutProps {
 }
 
 export default function BaseLayout({ id, leftComponent, rightComponent }: BaseLayoutProps) {
-  const isMobile = useMediaQuery("(max-width: 768px)");
+  const isMobile = useMediaQuery("(max-width: 821px)");
   return (
     <>
       <Box
