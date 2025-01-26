@@ -9,13 +9,17 @@ import { ArticleDetails } from "../types";
 
 function StyledChip({
   text,
+  suffix = "",
+  prefix = "",
   selected,
   onClickFunction,
   sx = {},
 }: {
   text: string;
+  suffix: string;
+  prefix: string;
   selected: boolean;
-  onClickFunction: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onClickFunction: (topic: string) => void;
   sx?: Record<string, any>;
 }) {
   return (
@@ -37,8 +41,8 @@ function StyledChip({
         cursor: "pointer",
         ...sx,
       }}
-      onClick={(e) => {
-        onClickFunction(e);
+      onClick={() => {
+        onClickFunction(text);
       }}
     >
       {selected ? (
@@ -48,7 +52,7 @@ function StyledChip({
       ) : (
         <></>
       )}
-      {text}
+      {prefix ? prefix : <></>} {text} {suffix ? suffix : <></>}
     </Box>
   );
 }
@@ -80,23 +84,15 @@ function BackButton() {
 }
 
 export default function Writings() {
-  const topicList = [
-    "Web Development",
-    "Database",
-    "Django",
-    "React",
-    "Artificial Intelligence",
-    "Data Science",
-    "DevOps",
-  ];
+  const topicList = Object.values(article.ArticleTags);
 
   const [selectedTopics, setSelectedTopics] = useState<string[]>([
     "Web Development",
   ]);
 
   const [hoveringPublication, setHoveringPublication] = useState("");
-  const updateSelectedTopic = (e: React.MouseEvent<HTMLDivElement>) => {
-    const topicVal = e.currentTarget.textContent || "";
+  const updateSelectedTopic = (topic: string) => {
+    const topicVal = topic;
     if (selectedTopics.includes(topicVal)) {
       setSelectedTopics(selectedTopics.filter((topic) => topic !== topicVal));
     } else {
@@ -141,6 +137,13 @@ export default function Writings() {
                   <StyledChip
                     key={topic}
                     text={topic}
+                    suffix={
+                      " [" +
+                      article.ArticleList.filter((x) => x.tags.includes(topic))
+                        .length +
+                      "]"
+                    }
+                    prefix=""
                     selected={selectedTopics.includes(topic)}
                     onClickFunction={updateSelectedTopic}
                     sx={{ marginLeft: 10, fontSize: "14px" }}
@@ -152,6 +155,25 @@ export default function Writings() {
         }
         rightComponent={
           <Box>
+            <Box
+              style={{
+                display: "inline-flex",
+                marginLeft: 40,
+              }}
+            >
+              Showing
+              <Text
+                style={{
+                  marginTop: 0,
+                  marginLeft: 4,
+                  marginRight: 4,
+                  color: "cyan",
+                }}
+              >
+                {selectedArticles.length}
+              </Text>
+              of {article.ArticleList.length} Articles
+            </Box>
             {selectedArticles.map((publication: ArticleDetails) => {
               return (
                 <Publication
