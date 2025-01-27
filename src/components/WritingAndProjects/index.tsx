@@ -32,6 +32,7 @@ function StyledChip({
         borderRadius: "9999px",
         backgroundColor: "#2DD4bf1a",
         opacity: selected ? "100%" : "50%",
+        transition: "opacity 0.3s ease",
         color: "cyan",
         fontSize: "13px",
         whiteSpace: "nowrap",
@@ -41,6 +42,7 @@ function StyledChip({
         marginTop: 6,
         cursor: "pointer",
         ...sx,
+        userSelect: "none",
       }}
       onClick={() => {
         onClickFunction(text);
@@ -48,7 +50,9 @@ function StyledChip({
     >
       {selected ? (
         <>
-          <FaCheck style={{ marginRight: 5 }} />
+          <FaCheck
+            style={{ marginRight: 5, transition: "transform 0.3s ease" }}
+          />
         </>
       ) : (
         <></>
