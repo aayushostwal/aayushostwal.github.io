@@ -6,7 +6,7 @@ const ArticleTags = {
   js: "JavaScript",
   react: "React",
   database: "Databases",
-  ai: "Artificial Intelligence",
+  // ai: "Artificial Intelligence",
   ml: "Machine learning",
   dl: "Deep Learning",
   web_scraping: "Web Scraping",
@@ -16,6 +16,15 @@ const ArticleTags = {
   interview: "Interview",
 };
 const ArticleList: ArticleDetails[] = [
+  {
+    heading: "Understanding Django Signals Handler🔥",
+    summary:
+      "Understand Django Documentation and code!",
+    link: "https://medium.com/gitconnected/understanding-django-signals-handler-7eb611834b87",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:2000/format:webp/0*0G3DSWntx7tKLyYS",
+    tags: [ArticleTags.django],
+  },
   {
     heading: "Access your Servers from Jenkins using Teleport t-bot.",
     summary:
