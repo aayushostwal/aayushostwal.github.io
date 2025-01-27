@@ -3,6 +3,7 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import CursorShadowProvider from "./components/CursorShadow";
 import AppLayout from "./components/Home";
 import Writings from "./components/WritingAndProjects";
+import { SpeedInsights } from "@vercel/speed-insights/react"
 
 export default function App() {
   return (
