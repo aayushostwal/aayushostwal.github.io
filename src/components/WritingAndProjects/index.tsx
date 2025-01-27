@@ -223,7 +223,6 @@ export default function Writings() {
             <Box
               style={{
                 display: "inline-flex",
-                marginLeft: 40,
               }}
             >
               Showing
