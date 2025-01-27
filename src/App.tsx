@@ -3,7 +3,8 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import CursorShadowProvider from "./components/CursorShadow";
 import AppLayout from "./components/Home";
 import Writings from "./components/WritingAndProjects";
-import { SpeedInsights } from "@vercel/speed-insights/react"
+import { SpeedInsights } from "@vercel/speed-insights/react";
+import { Analytics } from "@vercel/analytics/react";
 
 export default function App() {
   return (
@@ -25,7 +26,8 @@ export default function App() {
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
           </BrowserRouter>
-		  <SpeedInsights />
+          <SpeedInsights />
+          <Analytics />
         </Box>
       </CursorShadowProvider>
     </MantineProvider>
