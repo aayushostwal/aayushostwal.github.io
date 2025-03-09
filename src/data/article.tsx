@@ -1,5 +1,6 @@
 import { ArticleDetails } from "../components/types";
 const ArticleTags = {
+  python: "Core Python",
   web_dev: "Web Development",
   django: "Django",
   dev_ops: "DevOps",
@@ -17,9 +18,17 @@ const ArticleTags = {
 };
 const ArticleList: ArticleDetails[] = [
   {
-    heading: "Understanding Django Signals Handler🔥",
+    heading: "Python Concurrency: Threading Vs Multi-processing Vs AsyncIO",
     summary:
-      "Understand Django Documentation and code!",
+      "Deep dive into How you can really obtain concurrency in python. P.S. Threading in Python is not exactly threading!",
+    link: "https://medium.com/@aayushostwal/python-concurrency-threading-vs-multi-processing-vs-asyncio-bb76475572b7",
+    thumbnail:
+      "https://miro.medium.com/v2/resize:fit:4800/format:webp/1*8AZSCwKOgv9ivRU_sYMnKw.png",
+    tags: [ArticleTags.python],
+  },
+  {
+    heading: "Understanding Django Signals Handler🔥",
+    summary: "Understand Django Documentation and code!",
     link: "https://medium.com/gitconnected/understanding-django-signals-handler-7eb611834b87",
     thumbnail:
       "https://miro.medium.com/v2/resize:fit:2000/format:webp/0*0G3DSWntx7tKLyYS",
