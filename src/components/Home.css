@@ -1,0 +1,27 @@
+.left-section {
+  position: sticky;
+  top: 0;
+  height: fit-content;
+}
+
+.footer {
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+.footer a {
+  color: var(--accent-primary);
+  text-decoration: underline;
+}
+
+.footer a:hover {
+  color: var(--accent-hover);
+}
+
+@media (max-width: 821px) {
+  .footer {
+    padding-top: 3rem;
+  }
+}
