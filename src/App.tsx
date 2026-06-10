@@ -53,8 +53,8 @@ function Portfolio() {
         <HomeSection />
         <TutorialsSection />
         <BlogsSection />
-        <CareerSection />
         <ResourcesSection />
+        <CareerSection />
         <ContactSection />
       </main>
       <Footer />

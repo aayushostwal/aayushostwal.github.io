@@ -6,8 +6,8 @@ const NAV_LINKS = [
   { id: 'home', label: 'Home' },
   { id: 'tutorials', label: 'Tutorials' },
   { id: 'blogs', label: 'Blogs' },
+  { id: 'resources', label: 'Open Source' },
   { id: 'career', label: 'Career' },
-  { id: 'resources', label: 'Resources' },
   { id: 'contact', label: 'Contact' },
 ];
 
