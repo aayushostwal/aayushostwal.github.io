@@ -358,11 +358,19 @@ export function HomeSection() {
                   background: t.cardBg,
                 }}
               >
-                <img
-                  src="/profile_photo.png"
-                  alt="Aayush Ostwal"
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                />
+                <picture>
+                  <source srcSet="/profile_photo.webp" type="image/webp" />
+                  <source srcSet="/profile_photo.jpg" type="image/jpeg" />
+                  <img
+                    src="/profile_photo.jpg"
+                    alt="Aayush Ostwal"
+                    width={800}
+                    height={800}
+                    loading="eager"
+                    decoding="async"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  />
+                </picture>
                 <div
                   style={{
                     position: 'absolute',
