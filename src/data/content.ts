@@ -149,7 +149,6 @@ export const RESOURCES = [
 export const STATS = [
   { n: '50+', label: 'Articles Written' },
   { n: '5+', label: 'Years in ML/AI' },
-  { n: '$200K+', label: 'Infra Savings' },
 ];
 
 export const AWARDS = [
