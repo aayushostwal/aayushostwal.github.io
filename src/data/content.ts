@@ -26,7 +26,7 @@ export const BLOGS = [
   {
     platform: 'AI in Plain English',
     title: 'The 15 AI Agent Patterns Every Engineer Should Know',
-    date: 'Jun 2025',
+    date: 'Jun 2026',
     readTime: '14 min read',
     desc: 'A comprehensive breakdown of production-proven agentic patterns — from ReAct and tool-use loops to multi-agent orchestration — with real-world examples.',
     href: 'https://ai.plainenglish.io/the-15-ai-agent-patterns-every-engineer-should-know-with-production-examples-9293781e4fdd',
@@ -35,7 +35,7 @@ export const BLOGS = [
   {
     platform: 'AI in Plain English',
     title: 'How I Actually Use Claude Code as a Senior Engineer',
-    date: 'May 2025',
+    date: 'May 2026',
     readTime: '9 min read',
     desc: 'Practical workflows and hard-won lessons from using Claude Code day-to-day as a hands-on engineering leader — beyond the basic demos.',
     href: 'https://ai.plainenglish.io/how-i-actually-use-claude-code-as-a-senior-engineer-ab58c81c5a0d',
@@ -44,7 +44,7 @@ export const BLOGS = [
   {
     platform: 'AI in Plain English',
     title: 'Context Engineering Part 2: Token & Memory Management',
-    date: 'Apr 2025',
+    date: 'Apr 2026',
     readTime: '11 min read',
     desc: 'Deep dive into managing context windows, memory hierarchies, and token budgeting strategies for production LLM applications.',
     href: 'https://ai.plainenglish.io/part-2-context-engineering-token-memory-management-in-llms-practical-guide-for-ai-engineers-8b15cc6d2a31',
@@ -53,7 +53,7 @@ export const BLOGS = [
   {
     platform: 'AI in Plain English',
     title: 'Context Engineering Part 1: 7 Prompt Engineering Methods',
-    date: 'Apr 2025',
+    date: 'Apr 2026',
     readTime: '10 min read',
     desc: 'Seven battle-tested prompt engineering techniques that go beyond zero-shot — structured for engineers building reliable AI systems.',
     href: 'https://ai.plainenglish.io/context-engineering-7-prompt-engineering-methods-part-1-75e8b9fcba6f',
@@ -62,7 +62,7 @@ export const BLOGS = [
   {
     platform: 'Data Science Collective',
     title: '7 Ways to Boost Your PostgreSQL Performance',
-    date: 'Mar 2025',
+    date: 'Mar 2026',
     readTime: '12 min read',
     desc: 'From indexing strategies and query optimization to connection pooling and EXPLAIN plan analysis — practical techniques that cut CPU usage by 60%.',
     href: 'https://medium.com/data-science-collective/7-ways-to-boost-your-postgresql-performance-23b5cb473f20',
@@ -71,7 +71,7 @@ export const BLOGS = [
   {
     platform: 'Level Up Coding',
     title: 'Python Concurrency: Threading vs Multiprocessing vs AsyncIO',
-    date: '2024',
+    date: '2026',
     readTime: '10 min read',
     desc: 'A clear mental model for choosing the right Python concurrency primitive — with benchmarks, gotchas, and when each model actually wins.',
     href: 'https://levelup.gitconnected.com/python-concurrency-threading-vs-multi-processing-vs-asyncio-bb76475572b7',
